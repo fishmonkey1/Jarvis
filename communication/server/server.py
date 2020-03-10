@@ -8,7 +8,7 @@ HOST = ''
 PORT = 5500
 ADDR = (HOST, PORT)
 MAX_CONNETIONS = 10
-BUFSIZ = 512
+BUFSIZ = 512 # This is the size of the message
 
 # GLOBAL VARIABLES
 persons = []
@@ -49,7 +49,7 @@ def client_communication(person):
     while True:  # wait for any messages from person
         msg = client.recv(BUFSIZ)
 
-        
+
 
         if msg == bytes("{quit}", "utf8"):  # if message is qut disconnect client
             client.close()
